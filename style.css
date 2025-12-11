@@ -1,0 +1,1037 @@
+/* --- LIGHT THEME VARIABLES --- */
+.light-theme {
+    --bg-color: #f3f4f6;        /* Light Grey Background */
+    --card-bg: #ffffff;         /* White Cards */
+    --secondary-color: #e5e7eb; /* Light Grey Borders */
+    --text-white: #111827;      /* Dark Text (almost black) */
+    --text-grey: #4b5563;       /* Medium Grey Text */
+    /* Accent color stays the same or you can darken it if needed */
+    --accent-color: #0d9488;    /* Slightly darker teal for visibility on white */
+}
+
+/* Fix for the Toggle Icon cursor */
+#theme-icon {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+#theme-icon:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+
+/* Hide elements with this class */
+.hidden {
+    display: none;
+}
+
+
+/* --- RESET & VARIABLES --- */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* THE TERMINAL PALETTE */
+    --bg-color: #0d1117;        /* GitHub Dark Background */
+    --card-bg: #161b22;         /* Slightly lighter grey for cards */
+    --secondary-color: #30363d; /* Borders */
+    --accent-color: #2ea043;    /* Terminal Green */
+    
+    --text-white: #ffffff;
+    --text-grey: #c9d1d9;       /* Soft grey text */
+}
+
+body { background-color: var(--bg-color); color: var(--text-grey); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- BACKGROUND ANIMATION --- */
+.area { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; background: var(--bg-color); overflow: hidden; }
+.circles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
+.circles li {
+    position: absolute; display: block; list-style: none; width: 20px; height: 20px;
+    background: var(--accent-color); animation: animate 25s linear infinite; bottom: -150px; opacity: 0.1; border-radius: 2px;
+}
+.circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+.circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+.circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+.circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+@keyframes animate {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.1; border-radius: 0; }
+    100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+}
+
+/* --- NAVIGATION --- */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; position: absolute; width: 100%; top: 0; z-index: 100; }
+.logo { color: var(--text-white); font-family: 'Segoe UI', sans-serif; font-size: 1.8rem; font-weight: 700; }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { color: var(--text-white); font-weight: 500; }
+.nav-links a:hover { color: var(--accent-color); }
+.hamburger { display: none; color: white; font-size: 1.5rem; }
+
+/* --- HERO SECTION --- */
+.hero { 
+    height: 100vh; width: 100%; display: flex; align-items: center; position: relative; padding: 0 50px; overflow: hidden;
+}
+.hero-container { 
+    width: 100%; max-width: 1300px; margin: 0 auto; height: 100%; display: flex; align-items: center; position: relative;
+}
+.hero-text { z-index: 10; position: relative; max-width: 600px; }
+.hero-text h1 { font-size: 4.5rem; color: var(--text-white); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+.hero-text h2 { font-size: 2.2rem; color: var(--accent-color); margin-bottom: 20px; font-weight: 600; }
+.description { max-width: 500px; margin-bottom: 30px; font-size: 1.2rem; font-weight: 300; }
+
+.hero-img { 
+    position: absolute; right: 0; bottom: 0; height: 90%; width: 50%; z-index: 1; display: flex; align-items: flex-end; justify-content: flex-end;
+}
+.hero-img img { 
+    height: 100%; width: auto; max-width: 100%; object-fit: contain;
+    mask-image: linear-gradient(to right, transparent 0%, black 20%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+}
+
+/* Global Buttons */
+.btn { padding: 12px 30px; border-radius: 50px; font-weight: bold; margin-right: 15px; display: inline-block; cursor: pointer; text-decoration: none; }
+.btn.primary { background: var(--accent-color); color: var(--bg-color); border: 2px solid var(--accent-color); }
+.btn.primary:hover { background: transparent; color: var(--accent-color); }
+.btn.secondary { border: 2px solid var(--text-white); color: var(--text-white); }
+.btn.secondary:hover { background: var(--text-white); color: var(--bg-color); }
+.btn-center { display: block; margin: 50px auto; width: fit-content; border: 2px solid var(--accent-color); color: var(--accent-color); }
+.btn-center:hover { background: var(--accent-color); color: var(--bg-color); }
+
+/* --- SECTIONS GLOBAL --- */
+.container { padding: 80px 50px; max-width: 1100px; margin: 0 auto; }
+.sub-title { font-size: 50px; font-weight: 600; color: var(--text-white); margin-bottom: 40px; }
+
+/* --- ABOUT SECTION --- */
+.about-container { display: grid; grid-template-columns: 35% 60%; gap: 40px; }
+.about-col-1 img { width: 100%; border-radius: 15px; border: 1px solid var(--secondary-color); background: var(--card-bg); padding: 10px; }
+.tab-titles { display: flex; margin: 20px 0 40px; }
+.tab-links { margin-right: 50px; font-size: 18px; font-weight: 500; cursor: pointer; position: relative; color: var(--text-white); }
+.tab-links::after { content: ''; width: 0; height: 3px; background: var(--accent-color); position: absolute; left: 0; bottom: -8px; transition: 0.5s; }
+.tab-links.active-link::after { width: 70%; }
+.tab-contents ul li { list-style: none; margin: 10px 0; }
+.tab-contents ul li span { color: var(--accent-color); font-size: 14px; font-weight: bold; }
+.tab-contents { display: none; }
+.tab-contents.active-tab { display: block; animation: fadeEffect 1s; }
+@keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
+
+/* ... existing About styles ... */
+.about-col-2 { width: 100%; }
+
+/* =========================================
+   PASTE YOUR NEW STATS CODE HERE
+   ========================================= */
+/* --- ACHIEVEMENTS / STATS SECTION --- */
+.stats-section {
+    background-color: var(--bg-color);
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* ... rest of your stats code ... */
+
+/* ========================================= */
+
+/* --- SKILLS SECTION (Technical Arsenal) --- */
+.skills-section { background-color: var(--bg-color); padding: 80px 0; }
+
+/* --- SERVICES SECTION --- */
+.services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+.service-card { background: var(--card-bg); padding: 40px; border-radius: 20px; font-weight: 300; transition: background 0.5s, transform 0.5s; border: 1px solid var(--secondary-color); position: relative; overflow: hidden; }
+.service-card i { font-size: 50px; margin-bottom: 30px; color: var(--accent-color); transition: color 0.5s; }
+.service-card h2 { font-size: 30px; font-weight: 600; margin-bottom: 15px; color: var(--text-white); transition: color 0.5s; }
+.service-card p { color: var(--text-grey); font-size: 15px; line-height: 1.6; margin-bottom: 25px; transition: color 0.5s; }
+.service-card a { text-decoration: none; color: var(--text-white); font-size: 14px; margin-top: 20px; display: inline-block; position: relative; font-weight: bold; transition: color 0.5s; }
+.service-card a::after { content: ''; width: 0; height: 2px; background: var(--accent-color); position: absolute; left: 0; bottom: -6px; transition: 0.5s; }
+.service-card:hover a::after { width: 100%; background: var(--bg-color); }
+.service-card:hover { background: var(--accent-color); transform: translateY(-10px); }
+.service-card:hover i, .service-card:hover h2, .service-card:hover a { color: var(--bg-color); }
+.service-card:hover p { color: #002B5B; }
+
+/* --- PORTFOLIO --- */
+#portfolio { padding: 50px 0; }
+.work-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 50px; }
+.work { border-radius: 10px; position: relative; overflow: hidden; }
+.work img { width: 100%; border-radius: 10px; display: block; transition: transform 0.5s; }
+.layer {
+    width: 100%; height: 0; background: linear-gradient(rgba(0,0,0,0.1), var(--secondary-color) 90%);
+    border-radius: 10px; position: absolute; left: 0; bottom: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    padding: 0 40px; text-align: center; font-size: 14px; transition: height 0.5s;
+}
+.layer h3 { font-weight: 500; margin-bottom: 20px; color: var(--text-white); font-size: 22px; }
+.layer p { color: var(--text-grey); margin-bottom: 20px; font-size: 1rem; line-height: 1.5; }
+.layer a { margin-top: 20px; color: var(--accent-color); text-decoration: none; font-size: 18px; line-height: 60px; background: var(--text-white); width: 60px; height: 60px; border-radius: 50%; text-align: center; }
+.work:hover img { transform: scale(1.1); }
+.work:hover .layer { height: 100%; }
+
+/* --- CONTACT SECTION --- */
+#contact { padding: 50px 0; }
+.row { display: flex; justify-content: space-between; flex-wrap: wrap; }
+.contact-left { flex-basis: 35%; }
+.contact-right { flex-basis: 60%; }
+.contact-left p { margin-top: 30px; font-size: 1.1rem; color: var(--text-grey); }
+.contact-left p i { color: var(--accent-color); margin-right: 15px; font-size: 25px; }
+.social-icons { margin-top: 30px; }
+.social-icons a { text-decoration: none; font-size: 30px; margin-right: 15px; color: var(--text-grey); display: inline-block; transition: transform 0.5s; }
+.social-icons a:hover { color: var(--accent-color); transform: translateY(-5px); }
+.btn.btn2 { display: inline-block; background: var(--accent-color); color: var(--bg-color); border: none; padding: 14px 60px; font-size: 18px; margin-top: 20px; cursor: pointer; border-radius: 6px; font-weight: 600; transition: 0.3s; }
+.btn.btn2:hover { background: var(--text-white); transform: translateY(-5px); }
+.contact-right form { width: 100%; }
+form input, form textarea { width: 100%; border: 0; outline: none; background: var(--card-bg); padding: 15px; margin: 15px 0; color: var(--text-white); font-size: 18px; border-radius: 6px; border: 1px solid transparent; transition: 0.3s; }
+form input:focus, form textarea:focus { border-color: var(--accent-color); background: #1e3a56; }
+form textarea { resize: none; }
+
+/* --- FOOTER --- */
+footer { width: 100%; text-align: center; padding: 25px; background: #001f42; margin-top: 20px; border-top: 1px solid var(--secondary-color); }
+
+/* --- MOBILE RESPONSIVENESS (Hamburger Menu & Stacking) --- */
+@media (max-width: 900px) {
+    .navbar { padding: 20px 30px; }
+    .hamburger { display: block; cursor: pointer; z-index: 200; }
+    .nav-links {
+        display: block; position: fixed; top: 0; right: -250px; width: 250px; height: 100vh;
+        background: var(--card-bg); padding-top: 80px; z-index: 150; transition: right 0.5s;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+    .nav-links li { display: block; margin: 25px 30px; }
+    .nav-links .fas.fa-times { display: block !important; } /* Show close icon */
+    
+    .hero { height: auto; padding: 120px 20px 50px 20px; overflow: visible; }
+    .hero-container { display: flex; flex-direction: column-reverse; text-align: center; }
+    .hero-text h1 { font-size: 3rem; margin-top: 20px; }
+    .hero-img { 
+        position: relative; width: 100%; height: 40vh; opacity: 0.8; right: auto; bottom: auto; justify-content: center; margin-bottom: -50px; 
+    }
+    /* --- HERO IMAGE BLENDING --- */
+.hero-img img {
+    /* Ensure the image scales correctly */
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+
+    /* BLENDING MAGIC: This fades the bottom of the image */
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 500%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 500%);
+    
+    /* Optional: Smooth movement if you keep the scroll effect */
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+    .about-container, .contact .row { grid-template-columns: 1fr; display: block; }
+    .about-col-1, .contact-left { margin-bottom: 40px; }
+    .about-col-2, .contact-right { width: 100%; }
+}
+/* --- MODAL (POPUP) STYLES --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Nice blur effect */
+    animation: fadeIn 0.3s;
+}
+
+/* --- UPDATED MODAL STYLES --- */
+.modal-content {
+    background-color: var(--card-bg);
+    
+    /* MOVED TO TOP: Changed from 10% to 20px to sit at the top */
+    margin: 20px auto; 
+    
+    padding: 40px;
+    border: 1px solid var(--secondary-color);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    text-align: left;
+    animation: slideUp 0.4s;
+
+    /* ADDED: Scrollbar if the content is too long for the screen */
+    max-height: 90vh; /* Limits height to 90% of screen */
+    overflow-y: auto; /* Adds scrollbar inside the box */
+}
+
+.close-modal {
+    color: var(--text-grey);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+.modal-icon {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: var(--text-grey);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.modal-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-content ul li {
+    color: var(--text-white);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.modal-content ul li::before {
+    content: "▹";
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0} to {opacity: 1}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    /* ... existing mobile styles ... */
+
+    /* ADD THIS RULE TO FIX THE CUT BUTTON */
+    /* Inside @media (max-width: 900px) */
+
+    /* Make Close Icon Visible on Mobile */
+    .nav-links .fa-times { 
+        display: block !important; 
+        /* FIX: Change #fff to var(--text-white) so it turns black in light mode */
+        color: var(--text-white); 
+        cursor: pointer; 
+        position: absolute; 
+        top: 25px; 
+        left: 25px; 
+        font-size: 25px; 
+    }
+
+    /* Ensure the menu has the correct Z-Index */
+    .nav-links {
+        /* ... existing properties ... */
+        z-index: 999; /* Ensure it sits on top */
+    }
+}
+/* --- NAVIGATION --- */
+/* --- NAVIGATION (Sticky Header) --- */
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 50px; 
+    
+    /* Sticky Properties */
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    
+    /* FIX: Use variable so background turns white in light mode */
+    background-color: var(--bg-color); 
+    
+    /* Ensure visibility */
+    opacity: 0.95;
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid var(--secondary-color);
+    transition: background-color 0.3s;
+}
+
+/* Adjust Hero padding so it doesn't hide behind the fixed header */
+.hero { 
+    height: 100vh; 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+    padding: 80px 50px 0 50px; /* Added top padding */
+    overflow: hidden;
+}
+
+/* Add this to style.css */
+.hero-img img {
+    /* Uses a variable that JS will update */
+    transform: translateY(var(--scroll-y, 0));
+    /* Makes the movement smooth */
+    transition: transform 0.1s ease-out;
+    /* Optimizes performance for browsers */
+    will-change: transform;
+}
+
+/* --- HERO IMAGE BLENDING --- */
+.hero-img img {
+    /* Ensure the image scales correctly */
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+
+    /* BLENDING MAGIC: This fades the bottom of the image */
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    
+    /* Optional: Smooth movement if you keep the scroll effect */
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+    /* CHANGED: Uses variable so it turns white in light mode */
+    background-color: var(--bg-color); 
+    color: var(--text-grey); 
+    padding: 60px 0 20px; 
+    border-top: 1px solid var(--secondary-color); 
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3.footer-logo {
+    color: var(--accent-color); /* Uses accent color */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.footer-col h4 {
+    /* CHANGED: Uses variable so it turns dark in light mode */
+    color: var(--text-white); 
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.footer-desc {
+    line-height: 1.6;
+    max-width: 320px;
+    color: var(--text-grey);
+}
+
+.footer-links {
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--text-grey);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--secondary-color);
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* CHANGED: Uses card background so it flips in light mode */
+    background-color: var(--card-bg); 
+    color: var(--text-white); 
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 16px;
+    border: 1px solid var(--secondary-color);
+}
+
+.footer-socials a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom p {
+    color: var(--text-grey);
+    font-size: 0.85rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack everything in 1 column */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-desc {
+        margin: 0 auto; /* Center the description text */
+    }
+}
+/* --- SKILLS SECTION STYLES --- */
+.skills-section {
+    background-color: var(--bg-color); /* Matches your theme */
+    padding: 80px 0;
+}
+
+.section-header.center {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    color: var(--text-grey);
+    font-size: 1.1rem;
+    margin-top: -10px;
+}
+
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 60px;
+    align-items: start;
+}
+
+.column-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    color: var(--text-white);
+}
+
+/* --- Left Column: Circular Charts --- */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 Grid */
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--secondary-color);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+/* The CSS Ring Magic */
+.circle-chart {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    /* This creates the colored slice using CSS gradients */
+    background: conic-gradient(
+        var(--color) calc(var(--percent)), 
+        rgba(255,255,255,0.1) 0deg
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The inner hole to make it a ring (donut) */
+.circle-chart::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: var(--card-bg);
+    border-radius: 50%;
+}
+
+.chart-content {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-white);
+}
+
+.skill-name {
+    color: var(--text-grey);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* --- Right Column: Tools Tags --- */
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tool-tag {
+    background: var(--card-bg);
+    color: var(--text-grey);
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.tool-tag i {
+    color: var(--accent-color); /* Green Icon */
+    font-size: 1.1rem;
+}
+
+.tool-tag:hover {
+    border-color: var(--accent-color);
+    color: var(--text-white);
+    transform: translateX(5px);
+    background: rgba(143, 239, 207, 0.1); /* Slight glow */
+}
+
+/* --- Responsive for Skills --- */
+@media (max-width: 900px) {
+    .skills-wrapper {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 50px;
+    }
+    .charts-grid {
+        gap: 15px; /* Smaller gaps on mobile */
+    }
+}
+
+/* =========================================
+   ANIMATIONS & ENHANCEMENTS
+   ========================================= */
+
+/* --- 1. Scroll Reveal Classes --- */
+/* The starting state of elements before they scroll into view */
+.hidden-scroll {
+    opacity: 0;
+    filter: blur(5px); /* Subtle blur effect */
+    transform: translateY(30px); /* Push them down slightly */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth ease-out */
+}
+
+/* The finishing state when JS adds this class */
+.show-scroll {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* A delay class for items in a grid (like services or portfolio cards)
+   so they don't all appear at once */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+
+/* --- 2. Hero Section Staggered Entrance --- */
+/* We set the hero elements to initially hidden, then animate them in */
+.hero-text h1, 
+.hero-text h2, 
+.hero-text .description, 
+.hero-text .cta-buttons {
+    opacity: 0;
+    animation: fadeUpEntrance 0.8s forwards ease-out;
+}
+
+/* Stagger delays so they appear one after another */
+.hero-text h1 { animation-delay: 0.3s; }
+.hero-text h2 { animation-delay: 0.5s; }
+.hero-text .description { animation-delay: 0.7s; }
+.hero-text .cta-buttons { animation-delay: 0.9s; }
+
+/* The keyframe animation for the hero load */
+@keyframes fadeUpEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- 3. Enhanced Hover Effects --- */
+
+/* Add a subtle glow to Service & Skill cards on hover */
+.service-card, .skill-card {
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.service-card:hover, .skill-card:hover {
+    /* Existing styles plus a new glow effect using your accent color */
+    box-shadow: 0 10px 20px -10px rgba(143, 227, 207, 0.3); /* Uses a transparent version of your accent */
+}
+
+/* Make the portfolio image zoom smoother */
+.work img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* --- Success Message Style --- */
+#msg {
+    color: #61b752; /* Green */
+    margin-top: 15px;
+    display: block;
+    font-weight: 600;
+    min-height: 25px; /* Keeps space for the text */
+}
+
+/* =========================================
+   PRELOADER STYLES
+   ========================================= */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #02060a; /* Deep black background */
+    z-index: 99999; /* Ensures it sits on top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease-out, visibility 0.8s;
+}
+
+.loader-content {
+    text-align: center;
+    width: 300px;
+}
+
+/* "System Initializing..." Text */
+.loader-text {
+    font-family: 'Courier New', Courier, monospace; /* Hacker/Code font */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--accent-color); /* Uses your Mint/Cyan color */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* The Blinking Cursor (|) */
+.blinking-cursor {
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* The Progress Bar Track (Grey line) */
+.loader-track {
+    width: 100%;
+    height: 3px;
+    background-color: #1f2937;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* The Moving Bar (Color fill) */
+.loader-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color); /* Glowing effect */
+    animation: loadProgress 2.5s cubic-bezier(0.2, 0, 0.4, 1) forwards;
+}
+
+/* Animation Sequence */
+@keyframes loadProgress {
+    0% { width: 0%; }
+    30% { width: 20%; }
+    50% { width: 60%; }
+    80% { width: 80%; }
+    100% { width: 100%; }
+}
+
+/* Class to hide the loader smoothly */
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Allows clicking through while fading */
+}
+/* =========================================
+   AI CHAT WIDGET STYLES
+   ========================================= */
+.chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+}
+
+/* Floating Button */
+#chat-toggle-btn {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    color: #0b0e14;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chat-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+/* Chat Box Container */
+.chat-box {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 450px;
+    background: var(--card-bg);
+    border: 1px solid var(--secondary-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    transform-origin: bottom right;
+    transition: all 0.3s ease;
+}
+
+.chat-box.hidden {
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+/* Header */
+.chat-header {
+    background: var(--bg-color);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-white);
+}
+
+.chat-header h3 span {
+    color: #4ade80; /* Online Green */
+    font-size: 1.2rem;
+}
+
+#close-chat {
+    color: var(--text-grey);
+    cursor: pointer;
+}
+
+/* Messages Area */
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.bot-message {
+    background: var(--bg-color);
+    color: var(--text-grey);
+    align-self: flex-start;
+    border: 1px solid var(--secondary-color);
+}
+
+.user-message {
+    background: var(--accent-color);
+    color: #0b0e14;
+    align-self: flex-end;
+    font-weight: 500;
+}
+
+/* Input Area */
+.chat-input-area {
+    padding: 10px;
+    background: var(--bg-color);
+    border-top: 1px solid var(--secondary-color);
+    display: flex;
+    gap: 10px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    background: var(--card-bg);
+    color: var(--text-white);
+    outline: none;
+}
+
+#send-btn {
+    background: transparent;
+    color: var(--accent-color);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* --- Chat Suggestion Chips --- */
+.chat-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 5px 15px; /* Align with messages */
+    margin-bottom: 10px;
+}
+
+.chat-suggestions button {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--text-white); /* White text for visibility */
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hover Effect */
+.chat-suggestions button:hover {
+    background: var(--accent-color);
+    color: var(--bg-color); /* Text turns dark on hover */
+    box-shadow: 0 0 10px var(--accent-color); /* Glow */
+    transform: translateY(-2px);
+}
+
+/* --- Typing Animation Styles --- */
+.typing-container {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 20px;
+}
+
+.typing-text {
+    color: var(--accent-color); /* Use your theme's accent color */
+    position: relative;
+}
+
+/* Blinking Cursor */
+.typing-text::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    color: var(--text-white);
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .typing-container {
+        font-size: 1.5rem;
+    }
+}

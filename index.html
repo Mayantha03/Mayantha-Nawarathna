@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Computer Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="preloader">
+    <div class="loader-content">
+        <p class="loader-text">
+            System Initializing...<span class="blinking-cursor">|</span>
+        </p>
+        <div class="loader-track">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+</div>
+
+    <div class="area">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo"><a href="#home">MAYA<span style="color:var(--accent-color)">NTHA</span>.</a></div>
+        
+        <ul class="nav-links">
+            <i class="fas fa-times" onclick="closemenu()" style="position: absolute; top: 25px; left: 25px; font-size: 25px; cursor: pointer; display: none;"></i>
+            
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">My Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+            <li><i class="fas fa-moon" id="theme-icon"></i></li>
+        </ul>
+        
+        <div class="hamburger">
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-container">
+            
+            <div class="hero-text">
+                <h1>COMPUTER<br>ENGINEER</h1>
+                <h2>Hi, I'm <span class="highlight">MAYANTHA.</span></h2>
+                
+                <h3 class="typing-container">I am a <span class="typing-text"></span></h3>
+
+                <p class="description">
+                    Specializing in Embedded Systems, Networks, and Software Development.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn primary">View My Work</a>
+                    <a href="#contact" class="btn secondary">Contact Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-img">
+                <img src="assets/images/hero-person.jpg" alt="Hero Photo" id="heroPersonImg">
+            </div>
+
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container about-container hidden-scroll">
+            <div class="about-col-1">
+                <img src="assets/images/profile.jpg" alt="Profile Image">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>
+                   As a Computer Engineering undergraduate at General Sir John Kotelawala Defence University (KDU), I am deeply interested in software architecture and modern web design. I am a fast learner dedicated to building efficient, user-friendly applications. 
+                </p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills-tab')">Overview</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                
+                <div class="tab-contents active-tab" id="skills-tab">
+                    <ul>
+                        <li><span>Languages</span><br>Java (OOP), Python, C++, PHP</li>
+                        <li><span>Networking</span><br>VLSM, Packet Tracer, Wireshark</li>
+                        <li><span>Tools</span><br>Git, Linux, MATLAB, VS Code</li>
+                        <li><span>Communication Skills</span><br>English, Sinhala (Native)</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Volunteering</span><br>Currently volunteering at IEEE KDU.</li>
+                        <li><span>School Leaver</span><br>BOC (Paragahadeniya)</li>
+                        <li><span>School Level Service & Leadership</span><br>School Prefect & Volunteer Contributor, Central College Mawathagama.</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Undergraduate</span><br>B.Sc. Computer Engineering (at KDU)</li>
+                        <li><span>Certification</span><br>Completing CCNA: Introduction to Network</li>
+                        <li><span>School Level Qualifications</span><br>G.C.E. A/L (2023) & O/L (2019) at Central College, Mawathagama.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                
+                <div class="stat-card hidden-scroll delay-1">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h2 class="stat-number" data-target="50">0</h2>
+                    <span class="plus">+</span>
+                    <p>Projects Completed</p>
+                </div>
+
+                <div class="stat-card hidden-scroll delay-2">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h2 class="stat-number" data-target="20">0</h2>
+                    <span class="plus">+</span>
+                    <p>Happy Clients</p>
+                </div>
+
+                <div class="stat-card hidden-scroll delay-3">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2 class="stat-number" data-target="10">0</h2>
+                    <span class="plus">+</span>
+                    <p>Technologies</p>
+                </div>
+
+                <div class="stat-card hidden-scroll delay-4">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h2 class="stat-number" data-target="3">0</h2>
+                    <span class="plus">+</span>
+                    <p>Years Experience</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header center hidden-scroll">
+                <h2 class="sub-title">Technical Skills</h2>
+                <p class="section-subtitle">The tools and technologies I use to bring ideas to life</p>
+            </div>
+
+            <div class="skills-wrapper hidden-scroll">
+                
+                <div class="skills-column">
+                    <h3 class="column-title">Coding Proficiency</h3>
+                    <div class="charts-grid">
+                        
+                        <div class="skill-card">
+                            <div class="circle-chart" style="--percent: 95%; --color: #3b82f6;">
+                                <div class="chart-content"><span class="percent">95%</span></div>
+                            </div>
+                            <p class="skill-name">HTML/CSS/JS</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="circle-chart" style="--percent: 85%; --color: #a855f7;">
+                                <div class="chart-content"><span class="percent">85%</span></div>
+                            </div>
+                            <p class="skill-name">React.js</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="circle-chart" style="--percent: 90%; --color: #06b6d4;">
+                                <div class="chart-content"><span class="percent">90%</span></div>
+                            </div>
+                            <p class="skill-name">C++ / Arduino</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="circle-chart" style="--percent: 80%; --color: #22c55e;">
+                                <div class="chart-content"><span class="percent">80%</span></div>
+                            </div>
+                            <p class="skill-name">Python</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="skills-column">
+                    <h3 class="column-title">Tools & Hardware</h3>
+                    <div class="tools-grid">
+                        <span class="tool-tag"><i class="fas fa-code"></i> VS Code</span>
+                        <span class="tool-tag"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                        <span class="tool-tag"><i class="fab fa-figma"></i> Figma</span>
+                        <span class="tool-tag"><i class="fas fa-microchip"></i> Arduino Mega</span>
+                        <span class="tool-tag"><i class="fas fa-wifi"></i> ESP32</span>
+                        <span class="tool-tag"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</span>
+                        <span class="tool-tag"><i class="fas fa-database"></i> Firebase</span>
+                        <span class="tool-tag"><i class="fas fa-bolt"></i> Proteus</span>
+                        <span class="tool-tag"><i class="fas fa-image"></i> Photoshop</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h1 class="sub-title hidden-scroll" style="text-align:center">My Services</h1>
+            <div class="services-list">
+                <div class="service-card hidden-scroll delay-1">
+                    <i class="fas fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Building responsive websites using modern HTML, CSS, and JavaScript with a focus on clean code.</p>
+                    <a href="javascript:void(0)" onclick="openModal('modal-web')">Learn more</a>
+                </div>
+                <div class="service-card hidden-scroll delay-2">
+                    <i class="fas fa-crop-alt"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>Designing intuitive user interfaces that bridge the gap between complex engineering and user experience.</p>
+                    <a href="javascript:void(0)" onclick="openModal('modal-ui')">Learn more</a>
+                </div>
+                <div class="service-card hidden-scroll delay-3">
+                    <i class="fab fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p>Creating logical and efficient mobile application structures for iOS and Android platforms.</p>
+                    <a href="javascript:void(0)" onclick="openModal('modal-app')">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h1 class="sub-title hidden-scroll" style="text-align:center">My Work</h1>
+            
+            <div class="work-list hidden-scroll">
+                
+                <div class="work">
+                    <img src="assets/images/work-1.jpg" alt="Network Sim">
+                    <div class="layer">
+                        <h3>Network Sim</h3>
+                        <p>A Java-based simulation tool to analyze data packet flow.</p>
+                        <a href="javascript:void(0)" onclick="openModal('modal-project-1')"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="assets/images/work-2.jpg" alt="Graph Visualizer">
+                    <div class="layer">
+                        <h3>Graph Visualizer</h3>
+                        <p>An interactive Python application visualizing graph algorithms.</p>
+                        <a href="javascript:void(0)" onclick="openModal('modal-project-2')"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="assets/images/work-3.jpeg" alt="Portfolio Site">
+                    <div class="layer">
+                        <h3>Portfolio Site</h3>
+                        <p>A responsive personal portfolio website featuring modern CSS.</p>
+                        <a href="javascript:void(0)" onclick="openModal('modal-project-3')"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="work hidden">
+                    <img src="assets/images/web-design.jpg" alt="Web Design">
+                    <div class="layer">
+                        <h3>Web Designing</h3>
+                        <p>Modern e-commerce interface designed using Figma and React.</p>
+                        <a href="javascript:void(0)" onclick="openModal('modal-project-4')"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="work hidden">
+                    <img src="assets/images/iot.jpeg" alt="IoT Project">
+                    <div class="layer">
+                        <h3>IoT Weather Station</h3>
+                        <p>Arduino-based system for monitoring temperature and humidity.</p>
+                        <a href="javascript:void(0)" onclick="openModal('modal-project-5')"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="work hidden">
+                    <img src="assets/images/ai.jpg" alt="AI Project">
+                    <div class="layer">
+                        <h3>Face Recognition</h3>
+                        <p>Python application using OpenCV and Deep Learning.</p>
+                        <a href="javascript:void(0)" onclick="openModal('modal-project-6')"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <a href="javascript:void(0)" onclick="seeMore()" class="btn btn-center hidden-scroll" id="seeMoreBtn">See more</a>
+            
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container hidden-scroll">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> mayanthachanuka55@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> 0767113042</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/14Qx7WhgzLr/"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/mayanthachanuka?igsh=dG04amlhcTFsYnBz"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/mayantha-nawarathna-3816622b3?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <a href="assets/documents/my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+              <div class="contact-right">
+    <form id="contactForm">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn2">Submit</button>
+    </form>
+    <span id="msg"></span>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-web" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-web')">&times;</span>
+            <i class="fas fa-code modal-icon"></i>
+            <h2>Web Design Services</h2>
+            <p>I specialize in building fast, responsive, and SEO-friendly websites. My web design process includes:</p>
+            <ul>
+                <li>Custom HTML/CSS/JS development</li>
+                <li>Responsive layouts for Mobile, Tablet, and Desktop</li>
+                <li>Performance optimization for fast loading speeds</li>
+                <li>Integration with Content Management Systems (CMS)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-ui" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-ui')">&times;</span>
+            <i class="fas fa-crop-alt modal-icon"></i>
+            <h2>UI/UX Design Process</h2>
+            <p>Great design is about how it works, not just how it looks. My workflow involves:</p>
+            <ul>
+                <li>User Research and Persona creation</li>
+                <li>Wireframing and Prototyping (Figma)</li>
+                <li>User Testing and Iteration</li>
+                <li>High-fidelity interface design</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-app" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-app')">&times;</span>
+            <i class="fab fa-app-store modal-icon"></i>
+            <h2>App Development</h2>
+            <p>From concept to deployment, I create mobile experiences that users love:</p>
+            <ul>
+                <li>Cross-platform development (Flutter/React Native)</li>
+                <li>Native iOS and Android design guidelines</li>
+                <li>Backend integration and API connection</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-project-1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-project-1')">&times;</span>
+            <h2 style="color:var(--accent-color)">Network Traffic Simulator</h2>
+            <img src="assets/images/work-1.jpg" style="width:100%; border-radius:10px; margin: 20px 0;">
+            <h3>Overview</h3>
+            <p>A comprehensive Java-based simulation designed to analyze data packet movement across local networks. It helps visualize throughput, latency, and packet loss under various network topologies.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Real-time traffic visualization using Java Swing.</li>
+                <li>Custom algorithms to calculate packet loss probability.</li>
+                <li>Multi-threaded architecture for smooth simulation performance.</li>
+            </ul>
+            <a href="https://github.com/Mayantha03" class="btn primary" style="margin-top:20px; display:inline-block;">View on GitHub</a>
+        </div>
+    </div>
+
+    <div id="modal-project-2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-project-2')">&times;</span>
+            <h2 style="color:var(--accent-color)">Graph Theory Visualizer</h2>
+            <img src="assets/images/work-2.jpg" style="width:100%; border-radius:10px; margin: 20px 0;">
+            <h3>Overview</h3>
+            <p>An interactive educational tool built with Python and Matplotlib to visualize complex graph algorithms. It allows users to see step-by-step execution of pathfinding logic.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Visualizes Dijkstra's and A* Shortest Path algorithms.</li>
+                <li>Dynamic adjacency matrix generation.</li>
+                <li>Interactive node placement and edge weighting.</li>
+            </ul>
+            <a href="https://github.com/Mayantha03" class="btn primary" style="margin-top:20px; display:inline-block;">View on GitHub</a>
+        </div>
+    </div>
+
+    <div id="modal-project-3" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-project-3')">&times;</span>
+            <h2 style="color:var(--accent-color)">Personal Portfolio Website</h2>
+            <img src="assets/images/work-3.jpeg" style="width:100%; border-radius:10px; margin: 20px 0;">
+            <h3>Overview</h3>
+            <p>A fully responsive personal website designed to showcase engineering projects and technical skills. Built with a focus on clean code, speed, and modern UI/UX principles.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Responsive design for Mobile, Tablet, and Desktop.</li>
+                <li>Custom CSS animations and smooth scrolling.</li>
+                <li>Integrated contact form with email forwarding via Formspree.</li>
+            </ul>
+            <a href="https://github.com/Mayantha03" class="btn primary" style="margin-top:20px; display:inline-block;">View on GitHub</a>
+        </div>
+    </div>
+
+    <div id="modal-project-4" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-project-4')">&times;</span>
+            <h2 style="color:var(--accent-color)">E-Commerce UI/UX Design</h2>
+            <img src="assets/images/web-design.jpg" style="width:100%; border-radius:10px; margin: 20px 0;">
+            <h3>Overview</h3>
+            <p>A modern interface design for an online electronics store. The project focused on user journey mapping, high-fidelity prototyping in Figma, and front-end implementation using React.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>User-friendly product filtering and search system.</li>
+                <li>Dark mode and Light mode toggle implementation.</li>
+                <li>Optimized checkout flow to reduce cart abandonment.</li>
+            </ul>
+            <a href="https://mayantha03.github.io/Mayantha-Nawarathna/" class="btn primary" style="margin-top:20px; display:inline-block;">View Design</a>
+        </div>
+    </div>
+
+    <div id="modal-project-5" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-project-5')">&times;</span>
+            <h2 style="color:var(--accent-color)">IoT Smart Weather Station</h2>
+            <img src="assets/images/iot.jpeg" style="width:100%; border-radius:10px; margin: 20px 0;">
+            <h3>Overview</h3>
+            <p>An embedded system project utilizing Arduino and ESP8266 to monitor environmental conditions. Real-time data is sent to a cloud dashboard for remote monitoring.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Sensors for Temperature (DHT11), Humidity, and Air Quality.</li>
+                <li>Wireless data transmission via Wi-Fi module.</li>
+                <li>Mobile app integration for alerts and historical data logs.</li>
+            </ul>
+            <a href="assets/documents/IoT Smart Weather Station.pdf" download class="btn primary" style="margin-top:20px; display:inline-block;">View Circuit</a>
+        </div>
+    </div>
+
+    <div id="modal-project-6" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-project-6')">&times;</span>
+            <h2 style="color:var(--accent-color)">AI Face Recognition System</h2>
+            <img src="assets/images/ai.jpg" style="width:100%; border-radius:10px; margin: 20px 0;">
+            <h3>Overview</h3>
+            <p>A computer vision application developed using Python and OpenCV. It detects and identifies faces in real-time video streams for security access control.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Uses Haar Cascades and LBPH Face Recognizer.</li>
+                <li>Real-time detection with 95% accuracy in good lighting.</li>
+                <li>Automated attendance logging system based on face ID.</li>
+            </ul>
+            <a href="assets/documents/AI Face Recognition System.pdf" download class="btn primary" style="margin-top:20px; display:inline-block;">View Code</a>
+        </div>
+    </div> 
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-logo">Mayantha Nawarathna</h3>
+                <p class="footer-desc">
+                    A passionate Computer Engineering student dedicated to creating innovative solutions and continuous learning in the field of technology.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:mayanthachanuka55@gmail.com">Email</a></li>
+                    <li><a href="https://github.com/Mayantha03" target="_blank">GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/mayantha-nawarathna-3816622b3" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://facebook.com/share/14Qx7WhgzLr/" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-socials">
+                <a href="https://github.com/Mayantha03"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/mayantha-nawarathna-3816622b3"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:mayanthachanuka55@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://facebook.com/share/14Qx7WhgzLr/"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p>&copy; 2025 Mayantha Nawarathna. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="chat-widget">
+        <button id="chat-toggle-btn">
+            <i class="fas fa-robot"></i>
+        </button>
+        
+        <div class="chat-box hidden" id="chat-box">
+            <div class="chat-header">
+                <h3>Portfolio Bot <span>●</span></h3>
+                <i class="fas fa-times" id="close-chat"></i>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                Hello! I am Mayantha's AI Assistant. Click a topic below or ask me a question:
+            </div>
+            
+            <div class="chat-suggestions">
+                <button onclick="askBot('What are your skills?')">Technical Skills</button>
+                <button onclick="askBot('Show me your projects')">Recent Projects</button>
+                <button onclick="askBot('How can I contact you?')">Contact Info</button>
+                <button onclick="askBot('Download CV')">Get Resume</button>
+            </div>
+        </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Type a message...">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
